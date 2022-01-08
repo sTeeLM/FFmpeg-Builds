@@ -5,11 +5,10 @@ package_variant() {
     OUT="$2"
 
     mkdir -p "$OUT"/bin
-    cp "$IN"/bin/*.{exe,dll} "$OUT"/bin
+    cp "$IN"/bin/*.{exe} "$OUT"/bin
 
     mkdir -p "$OUT"/lib
     cp "$IN"/bin/*.lib "$OUT"/lib
-    cp "$IN"/lib/*.{def,dll.a} "$OUT"/lib
 
     mkdir -p "$OUT"/lib/pkgconfig
     cp -a "$IN"/lib/pkgconfig/*.pc "$OUT"/lib/pkgconfig
