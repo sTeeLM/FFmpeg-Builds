@@ -51,7 +51,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [win32,win64]
+        target: [win32,win64] 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
