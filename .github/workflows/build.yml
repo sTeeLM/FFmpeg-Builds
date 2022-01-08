@@ -89,7 +89,7 @@ jobs:
       matrix:
         target: [win32,win64]
         variant: [nonfree-shared 4.4,nonfree-static 4.4,nonfree-shared-debug 4.4,nonfree-static-debug 4.4]
-    steps:
+    steps: 
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install buildx
