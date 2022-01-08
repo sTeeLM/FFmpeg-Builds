@@ -89,7 +89,7 @@ jobs:
       matrix:
         target: [win32,win64]
         variant: [nonfree-shared 4.4,nonfree-static 4.4,nonfree-shared-debug 4.4,nonfree-static-debug 4.4]
-    steps: 
+    steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install buildx
@@ -167,7 +167,6 @@ jobs:
           RELDATE="$(date +'%Y-%m-%d %H:%M')"
           NAME="Auto-Build $RELDATE"
           TAGNAME="autobuild-$(date +'%Y-%m-%d-%H-%M')"
-#          hub release create $(for a in artifacts/*.{zip,tar.xz}; do echo -a $a; done) -m "$NAME" -t "master" "$TAGNAME"
           hub release create $(for a in artifacts/*.zip; do echo -a $a; done) -m "$NAME" -t "master" "$TAGNAME"
           echo "::set-output name=tag_name::${TAGNAME}"
           echo "::set-output name=rel_date::${RELDATE}"
@@ -177,7 +176,6 @@ jobs:
         run: |
           set -xe
           mkdir latest_artifacts
-#          ./util/repack_latest.sh latest_artifacts artifacts/*.{zip,tar.xz}
           ./util/repack_latest.sh latest_artifacts artifacts/*.zip
           NAME="Latest Auto-Build (${{ steps.create_release.outputs.rel_date }})"
           TAGNAME="latest"
