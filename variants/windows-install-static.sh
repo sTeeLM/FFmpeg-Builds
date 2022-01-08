@@ -7,4 +7,6 @@ package_variant() {
     cd "$IN"
     tar -cvmf - * | tar -xvmf - -C ../../"$OUT"
     cd -
+
+    find /opt/
 }
