@@ -5,6 +5,6 @@ package_variant() {
     OUT="$2"
 
     cd "$IN"
-    tar -cvmf - * | tar -xvmf - -C ../"$IN"
+    tar -cvmf - * | tar -xvmf - -C ../../"$OUT"
     cd -
 }
