@@ -1,14 +1,15 @@
 name: Build FFmpeg
 
 on:
-  push:
-    paths-ignore:
-      - '**.md'
-      - 'LICENSE'
-  repository_dispatch:
-    types: [build]
-  schedule:
-    - cron: '0 12 * * *'
+  [push]
+#  push:
+#    paths-ignore:
+#      - '**.md'
+#      - 'LICENSE'
+#  repository_dispatch:
+#    types: [build]
+#  schedule:
+#    - cron: '0 12 * * *'
 
 env:
   DOCKER_BUILDKIT: 1
@@ -148,7 +149,7 @@ jobs:
           path: artifacts/*
   publish_release:
     name: Publish release
-    if: github.event_name != 'push'
+#    if: github.event_name != 'push'
     needs: build_ffmpeg
     runs-on: ubuntu-latest
     steps:
