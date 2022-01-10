@@ -39,7 +39,7 @@ FF_CXXFLAGS="$(xargs <<< "$FF_CXXFLAGS")"
 FF_LDFLAGS="$(xargs <<< "$FF_LDFLAGS")"
 FF_LDEXEFLAGS="$(xargs <<< "$FF_LDEXEFLAGS")"
 FF_LIBS="$(xargs <<< "$FF_LIBS")"
-
+ 
 TESTFILE="uidtestfile"
 rm -f "$TESTFILE"
 docker run --rm -v "$PWD:/uidtestdir" "$IMAGE" touch "/uidtestdir/$TESTFILE"
